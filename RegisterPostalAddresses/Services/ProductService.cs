@@ -8,9 +8,16 @@ namespace RegisterPostalAddresses.Services
 {
     public class ProductService : IProductService
     {
-         async Task<List<Product>> IProductService.GetProductsAsync()
+      
+        async Task<List<Product>> IProductService.GetProductsAsync()
         {
             throw new NotImplementedException();
         }
+
+        async Task<List<Product>> IProductService.GetProductForCombpAsync()
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }

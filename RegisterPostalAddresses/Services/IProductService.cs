@@ -5,8 +5,10 @@ using System.Threading.Tasks;
 
 namespace RegisterPostalAddresses.Services
 {
-    interface IProductService
+    public interface IProductService
     {
-        public Task<List<Models.Product>> GetProductsAsync();  
+        public Task<List<Models.Product>> GetProductsAsync();
+
+        public Task<List<Models.Product>> GetProductForCombpAsync();
     }
 }
