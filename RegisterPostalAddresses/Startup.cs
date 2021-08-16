@@ -37,6 +37,8 @@ namespace RegisterPostalAddresses
                 // By default, all incoming requests will be authorized according to the default policy
                 options.FallbackPolicy = options.DefaultPolicy;
             });
+
+            services.AddScoped(typeof(Services.IProductService), typeof(Services.ProductService));
             services.AddRazorPages()
                 .AddMvcOptions(options => { })
                 .AddMicrosoftIdentityUI();

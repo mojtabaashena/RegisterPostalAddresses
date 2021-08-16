@@ -4,15 +4,22 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using RegisterPostalAddresses.Services;
 
 namespace RegisterPostalAddresses
 {
     public class ProductController : Controller
     {
-        // GET: ProductController
-        public ActionResult Index()
+        private IProductService productService;
+        public ProductController(IProductService productService)
         {
-            return View();
+            this.productService = productService;
+        }
+        // GET: ProductController
+        public async Task<ActionResult> Index()
+        {
+            var resault = await productService.GetProductsAsync();
+            return View(resault);
         }
 
         // GET: ProductController/Details/5
