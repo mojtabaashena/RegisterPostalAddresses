@@ -29,7 +29,7 @@ namespace RegisterPostalAddresses
 
             services.AddDbContext<Entity.MyDbContext>(options =>
             options.UseSqlServer(
-                Configuration.GetConnectionString("SqlConnection")));
+                Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddAuthorization(options =>
             {
